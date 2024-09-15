@@ -19,5 +19,14 @@ namespace EmployeeManagementBackend.Controllers
             return await _db.Employees.ToListAsync();
         }
 
+        [HttpPost]
+        [Route("api/employee/addnewemployee")]
+        public async Task<ActionResult<Employee>> AddNewEmployee(Employee employee)
+        {
+            _db.Employees.Add(employee);
+            await _db.SaveChangesAsync();
+            return CreatedAtAction("GetAllEmployee", new { id = employee.Id }, employee);
+        }
+
     }
 }
