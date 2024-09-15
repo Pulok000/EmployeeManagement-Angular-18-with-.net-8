@@ -1,0 +1,12 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Backend/API/EmployeeManagementBackend/.vs/EmployeeManagementBackend/FileContentIndex
+/Backend/API/EmployeeManagementBackend/.vs/EmployeeManagementBackend/config
+/Backend/API/EmployeeManagementBackend/.vs/EmployeeManagementBackend/DesignTimeBuild
+/Backend/API/EmployeeManagementBackend/.vs/EmployeeManagementBackend/v17/.futdcache.v2
+/Backend/API/EmployeeManagementBackend/.vs/EmployeeManagementBackend/v17/.suo
+/Backend/API/EmployeeManagementBackend/bin/Debug/net8.0
+/Backend/API/EmployeeManagementBackend/.vs/ProjectEvaluation
+/Backend/API/EmployeeManagementBackend/obj
