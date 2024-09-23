@@ -46,7 +46,19 @@ export class AppComponent {
     });
     console.log(this.contactsForm.value);
   }
-
+  onDelete(id: number) {
+    console.log(id);
+    this.http.delete(`https://localhost:7085/api/employee/deleteemployee/${id}`) // Use backticks here
+      .subscribe({
+          next: (value) => {
+            alert('Item deleted');
+            this.employees$ = this.getAllEmployee(); // Refresh the employee list
+          },
+          error: (err) => {
+            console.error('Error deleting employee:', err);
+          }
+      });
+}
   employees$=this.getAllEmployee();
 
   private getAllEmployee():Observable<Employee[]>{
@@ -57,4 +69,6 @@ export class AppComponent {
 
     return this.http.get<Employee[]>("https://localhost:7085/api/employee/addnewemployee");
   }
+  
+
 }
