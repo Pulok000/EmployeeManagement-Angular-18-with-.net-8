@@ -33,5 +33,20 @@ namespace EmployeeManagementBackend.Controllers
             return CreatedAtAction("GetAllEmployee", new { id = employee.Id }, employee);
         }
 
+        [HttpDelete]
+        [Route("api/employee/deleteemployee/{id}")]
+        public async Task<ActionResult> DeleteEmployee(int id)
+        {
+            var employee = await _db.Employees.FindAsync(id);
+            if (employee == null)
+            {
+                return NotFound("Employee not found.");
+            }
+
+            _db.Employees.Remove(employee);
+            await _db.SaveChangesAsync();
+            return NoContent();
+        }
+
     }
 }
